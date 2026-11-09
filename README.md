@@ -81,6 +81,6 @@ Use asterisks around words to highlight them:
 
 <div align="center">
 
-*Made with care.*
+*Made by Madhav🦚.*
 
 </div>
