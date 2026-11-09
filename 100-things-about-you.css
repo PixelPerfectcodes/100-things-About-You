@@ -1,0 +1,90 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #020309;
+  color: #f4eddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 49%, rgba(12, 21, 43, 0.68), transparent 66%),
+    #020309;
+}
+
+.stage {
+  position: relative;
+  width: min(100vw, 150vh);
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #020309;
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.75);
+}
+
+#scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  top: clamp(10px, 2.2vw, 24px);
+  right: clamp(10px, 2.2vw, 24px);
+  display: flex;
+  gap: 8px;
+  opacity: 0.68;
+  transition: opacity 180ms ease;
+}
+
+.controls:hover,
+.controls:focus-within {
+  opacity: 1;
+}
+
+.controls button {
+  padding: 8px 12px;
+  border: 1px solid rgba(205, 189, 156, 0.35);
+  border-radius: 2px;
+  background: rgba(3, 5, 12, 0.72);
+  color: #e8dcc1;
+  font: 600 11px/1 "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.controls button:hover,
+.controls button:focus-visible {
+  border-color: #c9a356;
+  color: #eccb80;
+  outline: none;
+}
+
+@media (max-aspect-ratio: 3 / 2) {
+  .stage {
+    width: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .controls {
+    transition: none;
+  }
+}
